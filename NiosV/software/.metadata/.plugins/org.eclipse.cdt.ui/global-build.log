@@ -1,0 +1,30 @@
+23:45:24 **** Clean-only build of configuration Debug for project app ****
+"C:\\intelFPGA_lite\\22.1std\\riscfree\\build_tools\\bin\\make.exe" -j clean 
+make: *** No rule to make target 'clean'.  Stop.
+"C:/intelFPGA_lite/22.1std/riscfree/build_tools/bin/make.exe -j clean" terminated with exit code 2. Build might be incomplete.
+23:45:24 Buildscript generation: app::Debug in C:\Users\USER\Documents\GitHub\HW_Accelerator\NiosV\software\app\build\Debug
+cmake -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON -G "Unix Makefiles" "C:\\Users\\USER\\Documents\\GitHub\\HW_Accelerator\\NiosV\\software\\app" 
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+CMake Error at C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/bsp/CMakeLists.txt:3 (project):
+  No CMAKE_C_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
+  the compiler, or to the compiler name if it is in the PATH.
+
+
+CMake Error at C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/bsp/CMakeLists.txt:3 (project):
+  No CMAKE_CXX_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
+  to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/app/build/Debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/app/build/Debug/CMakeFiles/CMakeError.log".
+Buildfile generation error occurred..
+cmake exited with status 1. See CDT global build console for details.
+Build stopped..

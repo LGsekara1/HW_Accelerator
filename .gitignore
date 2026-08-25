@@ -1,0 +1,28 @@
+# Quartus generated files
+NiosV/db/
+NiosV/incremental_db/
+NiosV/output_files/
+NiosV/.qsys_edit/
+NiosV/ashlingWorkspace/
+NiosV/simulation/
+NiosV/NiosV/
+
+# CMake build output
+NiosV/build*/
+NiosV/CMakeFiles/
+NiosV/CMakeCache.txt
+NiosV/Makefile
+NiosV/cmake_install.cmake
+NiosV/software/app/build/
+
+# Eclipse-generated project metadata
+NiosV/software/app/.cproject
+NiosV/software/app/.project
+
+# Local VS Code configuration
+NiosV/.vscode/
+
+# Build artifacts
+*.elf
+*.objdump
+*.stack_report
