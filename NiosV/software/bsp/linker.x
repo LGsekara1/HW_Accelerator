@@ -1,10 +1,10 @@
 /*
  * linker.x - Linker script
  *
- * Machine generated for CPU 'MyNiosV' in SOPC Builder design 'NiosV'
- * SOPC Builder design path: ../../NiosV.sopcinfo
+ * Machine generated for CPU 'niosv' in SOPC Builder design 'NiosV'
+ * SOPC Builder design path: ../../niosv.sopcinfo
  *
- * Generated: Tue Aug 25 20:18:48 IST 2026
+ * Generated: Fri Aug 28 17:45:50 IST 2026
  */
 
 /*

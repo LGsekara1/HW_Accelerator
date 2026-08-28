@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
+include(toolchain.cmake)
+
 project(bsp)
 
 set(BspLibraryName "hal2_bsp" CACHE STRING "The BSP library name.")

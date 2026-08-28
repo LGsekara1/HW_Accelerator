@@ -1,10 +1,10 @@
 /*
  * alt_sys_init.c - HAL initialization source
  *
- * Machine generated for CPU 'MyNiosV' in SOPC Builder design 'NiosV'
- * SOPC Builder design path: ../../NiosV.sopcinfo
+ * Machine generated for CPU 'niosv' in SOPC Builder design 'NiosV'
+ * SOPC Builder design path: ../../niosv.sopcinfo
  *
- * Generated: Tue Aug 25 20:18:48 IST 2026
+ * Generated: Fri Aug 28 17:45:50 IST 2026
  */
 
 /*
@@ -66,9 +66,9 @@
  * Allocate the device storage
  */
 
-INTEL_NIOSV_M_IRQ_INSTANCE ( MYNIOSV, MyNiosV);
+INTEL_NIOSV_M_IRQ_INSTANCE ( NIOSV, niosv);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( DEBUG, DEBUG);
-INTEL_NIOSV_M_INSTANCE ( MYNIOSV, MyNiosV);
+INTEL_NIOSV_M_INSTANCE ( NIOSV, niosv);
 
 /*
  * Initialize the interrupt controller devices
@@ -80,7 +80,7 @@ INTEL_NIOSV_M_INSTANCE ( MYNIOSV, MyNiosV);
 
 void alt_irq_init ( const void* base )
 {
-    INTEL_NIOSV_M_IRQ_INIT ( MYNIOSV, MyNiosV);
+    INTEL_NIOSV_M_IRQ_INIT ( NIOSV, niosv);
     alt_irq_cpu_enable_interrupts();
 }
 
@@ -92,5 +92,5 @@ void alt_irq_init ( const void* base )
 void alt_sys_init( void )
 {
     ALTERA_AVALON_JTAG_UART_INIT ( DEBUG, DEBUG);
-    INTEL_NIOSV_M_INIT ( MYNIOSV, MyNiosV);
+    INTEL_NIOSV_M_INIT ( NIOSV, niosv);
 }

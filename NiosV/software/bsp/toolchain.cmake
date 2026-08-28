@@ -42,3 +42,7 @@ add_compile_definitions(
 
 remove_definitions(
 )
+
+enable_language(ASM)
+enable_language(C)
+enable_language(CXX)

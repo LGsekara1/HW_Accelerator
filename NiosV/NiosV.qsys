@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="System" />
+   categories="" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element DEBUG
@@ -22,30 +22,6 @@
       datum baseAddress
       {
          value = "196672";
-         type = "String";
-      }
-   }
-   element MyNiosV
-   {
-      datum _sortIndex
-      {
-         value = "1";
-         type = "int";
-      }
-   }
-   element MyNiosV.dm_agent
-   {
-      datum baseAddress
-      {
-         value = "131072";
-         type = "String";
-      }
-   }
-   element MyNiosV.timer_sw_agent
-   {
-      datum baseAddress
-      {
-         value = "196608";
          type = "String";
       }
    }
@@ -73,6 +49,30 @@
          type = "int";
       }
    }
+   element niosv
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element niosv.dm_agent
+   {
+      datum baseAddress
+      {
+         value = "131072";
+         type = "String";
+      }
+   }
+   element niosv.timer_sw_agent
+   {
+      datum baseAddress
+      {
+         value = "196608";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -87,7 +87,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="NiosV.qpf" />
+ <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -114,34 +114,13 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="MyNiosV" kind="intel_niosv_m" version="1.0.0" enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="2" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="2" />
-  <parameter name="AUTO_DATA_MANAGER_ADDRESS_WIDTH" value="AddressWidth = 18" />
-  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
-  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
-  <parameter
-     name="AUTO_INSTRUCTION_MANAGER_ADDRESS_WIDTH"
-     value="AddressWidth = 18" />
-  <parameter name="AUTO_PLATFORM_IRQ_RX_INTERRUPTS_USED" value="1" />
-  <parameter name="clockFrequency" value="50000000" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x0' end='0x20000' type='altera_avalon_onchip_memory2.s1' /><slave name='MyNiosV.dm_agent' start='0x20000' end='0x30000' type='intel_niosv_m.dm_agent' /><slave name='MyNiosV.timer_sw_agent' start='0x30000' end='0x30040' type='intel_niosv_m.timer_sw_agent' /><slave name='DEBUG.avalon_jtag_slave' start='0x30040' end='0x30048' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
-  <parameter name="deviceFamily" value="Cyclone IV E" />
-  <parameter name="enableDebug" value="true" />
-  <parameter name="enableDebugReset" value="true" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x0' end='0x20000' type='altera_avalon_onchip_memory2.s1' /><slave name='MyNiosV.dm_agent' start='0x20000' end='0x30000' type='intel_niosv_m.dm_agent' /></address-map>]]></parameter>
-  <parameter name="numGpr" value="32" />
-  <parameter name="resetOffset" value="0" />
-  <parameter name="resetSlave" value="SRAM.s1" />
-  <parameter name="useResetReq" value="false" />
- </module>
  <module
    name="SRAM"
    kind="altera_avalon_onchip_memory2"
    version="22.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="NiosV_SRAM" />
+  <parameter name="autoInitializationFileName" value="$${FILENAME}_SRAM" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -173,10 +152,31 @@
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
+ <module name="niosv" kind="intel_niosv_m" version="1.0.0" enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_DATA_MANAGER_ADDRESS_WIDTH" value="AddressWidth = 18" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter
+     name="AUTO_INSTRUCTION_MANAGER_ADDRESS_WIDTH"
+     value="AddressWidth = 18" />
+  <parameter name="AUTO_PLATFORM_IRQ_RX_INTERRUPTS_USED" value="1" />
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x0' end='0x20000' type='altera_avalon_onchip_memory2.s1' /><slave name='niosv.dm_agent' start='0x20000' end='0x30000' type='intel_niosv_m.dm_agent' /><slave name='niosv.timer_sw_agent' start='0x30000' end='0x30040' type='intel_niosv_m.timer_sw_agent' /><slave name='DEBUG.avalon_jtag_slave' start='0x30040' end='0x30048' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="deviceFamily" value="Cyclone IV E" />
+  <parameter name="enableDebug" value="true" />
+  <parameter name="enableDebugReset" value="true" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x0' end='0x20000' type='altera_avalon_onchip_memory2.s1' /><slave name='niosv.dm_agent' start='0x20000' end='0x30000' type='intel_niosv_m.dm_agent' /></address-map>]]></parameter>
+  <parameter name="numGpr" value="32" />
+  <parameter name="resetOffset" value="0" />
+  <parameter name="resetSlave" value="SRAM.s1" />
+  <parameter name="useResetReq" value="false" />
+ </module>
  <connection
    kind="avalon"
    version="22.1"
-   start="MyNiosV.data_manager"
+   start="niosv.data_manager"
    end="DEBUG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00030040" />
@@ -185,17 +185,13 @@
  <connection
    kind="avalon"
    version="22.1"
-   start="MyNiosV.data_manager"
-   end="MyNiosV.dm_agent">
+   start="niosv.data_manager"
+   end="niosv.dm_agent">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00020000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection
-   kind="avalon"
-   version="22.1"
-   start="MyNiosV.data_manager"
-   end="SRAM.s1">
+ <connection kind="avalon" version="22.1" start="niosv.data_manager" end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -203,8 +199,8 @@
  <connection
    kind="avalon"
    version="22.1"
-   start="MyNiosV.data_manager"
-   end="MyNiosV.timer_sw_agent">
+   start="niosv.data_manager"
+   end="niosv.timer_sw_agent">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00030000" />
   <parameter name="defaultConnection" value="false" />
@@ -212,8 +208,8 @@
  <connection
    kind="avalon"
    version="22.1"
-   start="MyNiosV.instruction_manager"
-   end="MyNiosV.dm_agent">
+   start="niosv.instruction_manager"
+   end="niosv.dm_agent">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00020000" />
   <parameter name="defaultConnection" value="false" />
@@ -221,19 +217,19 @@
  <connection
    kind="avalon"
    version="22.1"
-   start="MyNiosV.instruction_manager"
+   start="niosv.instruction_manager"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="22.1" start="clk_0.clk" end="MyNiosV.clk" />
  <connection kind="clock" version="22.1" start="clk_0.clk" end="DEBUG.clk" />
+ <connection kind="clock" version="22.1" start="clk_0.clk" end="niosv.clk" />
  <connection kind="clock" version="22.1" start="clk_0.clk" end="SRAM.clk1" />
  <connection
    kind="interrupt"
    version="22.1"
-   start="MyNiosV.platform_irq_rx"
+   start="niosv.platform_irq_rx"
    end="DEBUG.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
@@ -241,18 +237,14 @@
    kind="reset"
    version="22.1"
    start="clk_0.clk_reset"
-   end="MyNiosV.ndm_reset_in" />
- <connection
-   kind="reset"
-   version="22.1"
-   start="clk_0.clk_reset"
-   end="MyNiosV.reset" />
+   end="niosv.ndm_reset_in" />
  <connection kind="reset" version="22.1" start="clk_0.clk_reset" end="DEBUG.reset" />
+ <connection kind="reset" version="22.1" start="clk_0.clk_reset" end="niosv.reset" />
  <connection kind="reset" version="22.1" start="clk_0.clk_reset" end="SRAM.reset1" />
  <connection
    kind="reset"
    version="22.1"
-   start="MyNiosV.dbg_reset_out"
+   start="niosv.dbg_reset_out"
    end="clk_0.clk_in_reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

@@ -1,30 +1,18 @@
-23:45:24 **** Clean-only build of configuration Debug for project app ****
-"C:\\intelFPGA_lite\\22.1std\\riscfree\\build_tools\\bin\\make.exe" -j clean 
-make: *** No rule to make target 'clean'.  Stop.
-"C:/intelFPGA_lite/22.1std/riscfree/build_tools/bin/make.exe -j clean" terminated with exit code 2. Build might be incomplete.
-23:45:24 Buildscript generation: app::Debug in C:\Users\USER\Documents\GitHub\HW_Accelerator\NiosV\software\app\build\Debug
-cmake -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON -G "Unix Makefiles" "C:\\Users\\USER\\Documents\\GitHub\\HW_Accelerator\\NiosV\\software\\app" 
--- The C compiler identification is unknown
--- The CXX compiler identification is unknown
-CMake Error at C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/bsp/CMakeLists.txt:3 (project):
-  No CMAKE_C_COMPILER could be found.
+18:09:59 **** Incremental Build of configuration Debug for project app ****
+"C:\\intelFPGA_lite\\22.1std\\riscfree\\build_tools\\bin\\make.exe" -j all 
+[ 95%] Built target hal2_bsp
+Consolidate compiler generated dependencies of target app.elf
+[ 96%] Building C object CMakeFiles/app.elf.dir/hello.c.obj
+[ 97%] Linking C executable app.elf
+[ 97%] Built target app.elf
+[ 98%] Creating app.elf.objdump.
+[100%] Reporting memory available for stack + heap in app.elf.
+process_begin: CreateProcess(NULL, niosv-stack-report -p riscv32-unknown-elf- app.elf, ...) failed.
+make (e=2): The system cannot find the file specified.
 
-  Tell CMake where to find the compiler by setting either the environment
-  variable "CC" or the CMake cache entry CMAKE_C_COMPILER to the full path to
-  the compiler, or to the compiler name if it is in the PATH.
-
-
-CMake Error at C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/bsp/CMakeLists.txt:3 (project):
-  No CMAKE_CXX_COMPILER could be found.
-
-  Tell CMake where to find the compiler by setting either the environment
-  variable "CXX" or the CMake cache entry CMAKE_CXX_COMPILER to the full path
-  to the compiler, or to the compiler name if it is in the PATH.
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/app/build/Debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/USER/Documents/GitHub/HW_Accelerator/NiosV/software/app/build/Debug/CMakeFiles/CMakeError.log".
-Buildfile generation error occurred..
-cmake exited with status 1. See CDT global build console for details.
-Build stopped..
+make[2]: *** [CMakeFiles/niosv-stack-report.dir/build.make:73: app.elf.stack_report] Error 2
+make[1]: *** [CMakeFiles/Makefile2:156: CMakeFiles/niosv-stack-report.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[100%] Built target create-objdump
+make: *** [Makefile:91: all] Error 2
+"C:/intelFPGA_lite/22.1std/riscfree/build_tools/bin/make.exe -j all" terminated with exit code 2. Build might be incomplete.

@@ -1,8 +1,11 @@
 #include <stdio.h>
 
-int main (void)
+int main(void)
 {
-	printf("Hellow Nios V World \n");
+//	for(int i=0;i<5;i++){
+//		printf("%d",i);
+//	}
+	printf("Hello \n");
 	return 0;
 
 }
